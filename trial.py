@@ -33,6 +33,7 @@ def test_validate_dropdown(browser):
     # Get all the options in the dropdown
     options = dropdown.find_elements_by_tag_name("option")
 
+    #self.assert_process_still_running()
     # Loop through the options and validate their contents
     for option in options:
         action.move_to_element(option).perform()
