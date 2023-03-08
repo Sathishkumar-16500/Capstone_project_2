@@ -42,17 +42,23 @@ class Orange_hrm_Locators:
     nationality_dropdown='//*[@id="app"]/div[1]/div[2]/div[2]/div/div/div/div[2]/div[1]/form/div[3]/div[1]/div[1]/div/div[2]/div/div/div[1]'
     marital_status='//*[@id="app"]/div[1]/div[2]/div[2]/div/div/div/div[2]/div[1]/form/div[3]/div[1]/div[2]/div/div[2]/div/div'
 
-    admin_xpath = '//*[@id="app"]/div[1]/div[1]/aside/nav/div[2]/ul/li[1]/a'
-    pim_xpath = '//*[@id="app"]/div[1]/div[1]/aside/nav/div[2]/ul/li[2]/a'
-    leave_xpath = '//*[@id="app"]/div[1]/div[1]/aside/nav/div[2]/ul/li[3]/a'
-    time_xpath = '//*[@id="app"]/div[1]/div[1]/aside/nav/div[2]/ul/li[4]/a'
-    recruitment_xpath = '//*[@id="app"]/div[1]/div[1]/aside/nav/div[2]/ul/li[5]/a'
-    my_info_xpath = '//*[@id="app"]/div[1]/div[1]/aside/nav/div[2]/ul/li[6]/a'
-    performance_xpath = '//*[@id="app"]/div[1]/div[1]/aside/nav/div[2]/ul/li[7]/a'
-    dashboard_xpath = '//*[@id="app"]/div[1]/div[1]/aside/nav/div[2]/ul/li[8]/a'
-    directory_xpath = '//*[@id="app"]/div[1]/div[1]/aside/nav/div[2]/ul/li[9]/a'
-    maintenance_xpath = '//*[@id="app"]/div[1]/div[1]/aside/nav/div[2]/ul/li[10]/a'
-    buzz_xpath = '//*[@id="app"]/div[1]/div[1]/aside/nav/div[2]/ul/li[11]/a'
+    admin_xpath = "//span[text()='Admin']"
+    pim_xpath = "//span[text()='PIM']"
+    leave_xpath = "//span[text()='Leave']"
+    time_xpath = "//span[text()='Time']"
+    recruitment_xpath = "//span[text()='Recruitment']"
+    my_info_xpath = "//span[text()='My Info']"
+    performance_xpath = "//span[text()='Performance']"
+    dashboard_xpath = "//span[text()='Dashboard']"
+    directory_xpath = "//span[text()='Directory']"
+    maintenance_xpath = "//span[text()='Maintenance']"
+    buzz_xpath = "//span[text()='Buzz']"
+
+    user_management_dropdown='//*[@id="app"]/div[1]/div[1]/header/div[2]/nav/ul/li[1]'
+    users_option='//*[@id="app"]/div[1]/div[1]/header/div[2]/nav/ul/li[1]/ul/li'
+
+    user_role_dropdown='//*[@id="app"]/div[1]/div[2]/div[2]/div/div[1]/div[2]/form/div[1]/div/div[2]/div/div[2]/div/div'
+
 
     pim='//*[@id="app"]/div[1]/div[1]/aside/nav/div[2]/ul/li/a'
     dd='//*[@id="app"]/div[1]/div[1]/aside/nav/div[2]/ul/li/a/span'
