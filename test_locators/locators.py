@@ -15,6 +15,11 @@ class Orange_hrm_Locators:
     save_button='//*[@id="app"]/div[1]/div[2]/div[2]/div/div/form/div[2]/button[2]'
     added_user_toast='//*[@id="oxd-toaster_1"]'
 
+    login_username_textbox='//*[@id="app"]/div[1]/div[2]/div[2]/div/div/form/div[1]/div[2]/div[3]/div/div[1]/div/div[2]/input'
+    login_status_radio='//*[@id="app"]/div[1]/div[2]/div[2]/div/div/form/div[1]/div[2]/div[3]/div/div[2]/div/div[2]/div[1]/div[2]/div/label'
+    login_password_textbox='//*[@id="app"]/div[1]/div[2]/div[2]/div/div/form/div[1]/div[2]/div[4]/div/div[1]/div/div[2]/input'
+    login_password_confirm_textbox='//*[@id="app"]/div[1]/div[2]/div[2]/div/div/form/div[1]/div[2]/div[4]/div/div[2]/div/div[2]/input'
+    login_save_button='//*[@id="app"]/div[1]/div[2]/div[2]/div/div/form/div[2]/button[2]'
     edit_button='//*[@id="app"]/div[1]/div[2]/div[2]/div/div[2]/div[3]/div/div[2]/div[1]/div/div[9]/div/button[2]'
     edit_firstname_textbox='//*[@id="app"]/div[1]/div[2]/div[2]/div/div/div/div[2]/div[1]/form/div[1]/div[1]/div/div/div[2]/div[1]/div[2]/input'
     edit_middlename_textbox='//*[@id="app"]/div[1]/div[2]/div[2]/div/div/div/div[2]/div[1]/form/div[1]/div[1]/div/div/div[2]/div[2]/div[2]/input'
@@ -54,10 +59,12 @@ class Orange_hrm_Locators:
     maintenance_xpath = "//span[text()='Maintenance']"
     buzz_xpath = "//span[text()='Buzz']"
 
+    login_details_toggle='//*[@id="app"]/div[1]/div[2]/div[2]/div/div/form/div[1]/div[2]/div[2]/div/label'
     user_management_dropdown='//*[@id="app"]/div[1]/div[1]/header/div[2]/nav/ul/li[1]'
     users_option='//*[@id="app"]/div[1]/div[1]/header/div[2]/nav/ul/li[1]/ul/li'
 
     user_role_dropdown='//*[@id="app"]/div[1]/div[2]/div[2]/div/div[1]/div[2]/form/div[1]/div/div[2]/div/div[2]/div/div'
+    status_dropdown='//*[@id="app"]/div[1]/div[2]/div[2]/div/div[1]/div[2]/form/div[1]/div/div[4]/div/div[2]/div/div'
 
 
     pim='//*[@id="app"]/div[1]/div[1]/aside/nav/div[2]/ul/li/a'
@@ -68,6 +75,24 @@ class Orange_hrm_Locators:
 
     small_tabs = ['admin', 'pim', 'leave', 'time', 'recruitment', 'my info', 'performance', 'dashboard', 'directory',
                   'maintenance', 'buzz']
+
+    personal_details='//a[text()="Personal Details"]'
+    contact_details = '//a[text()="Contact Details"]'
+    emergency_contacts = '//a[text()="Emergency Contacts"]'
+    dependants = '//a[text()="Dependents"]'
+    immigration = '//a[text()="Immigration"]'
+    job = '//a[text()="Job"]'
+    salary = '//a[text()="Salary"]'
+    tax_exemptions = '//a[text()="Tax Exemptions"]'
+    report_to = '//a[text()="Report-to"]'
+    qualifications = '//a[text()="Qualifications"]'
+    membership = '//a[text()="Memberships"]'
+
+    employee_details_xpath=[personal_details,contact_details,emergency_contacts,dependants,immigration,
+                      job,salary,tax_exemptions,report_to,qualifications,membership]
+    employee_details = ['personal_details', 'contact_details', 'emergency_contacts', 'dependants', 'immigration',
+                        'job', 'salary', 'tax_exemptions', 'report_to', 'qualifications', 'membership']
+
     def capitalize_list(item):
         return item.upper()
     caps_tabs = list(map(capitalize_list, small_tabs))
