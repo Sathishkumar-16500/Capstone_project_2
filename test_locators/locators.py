@@ -99,6 +99,7 @@ class Orange_hrm_Locators:
     tabs_xpath = [admin_xpath, pim_xpath, leave_xpath, time_xpath, recruitment_xpath, my_info_xpath, performance_xpath,
                   dashboard_xpath, directory_xpath, maintenance_xpath, buzz_xpath]
 
+    personal_details_heading='//*[@id="app"]/div[1]/div[2]/div[2]/div/div/div/div[2]/div[1]/h6'
     personal_details_first_name_xpath='//*[@id="app"]/div[1]/div[2]/div[2]/div/div/div/div[2]/div[1]/form/div[1]/div[1]/div/div/div[2]/div[1]/div[2]/input'
     personal_details_middle_name_xpath='//*[@id="app"]/div[1]/div[2]/div[2]/div/div/div/div[2]/div[1]/form/div[1]/div[1]/div/div/div[2]/div[2]/div[2]/input'
     personal_details_last_name_xpath='//*[@id="app"]/div[1]/div[2]/div[2]/div/div/div/div[2]/div[1]/form/div[1]/div[1]/div/div/div[2]/div[3]/div[2]/input'
@@ -197,6 +198,42 @@ class Orange_hrm_Locators:
     job_details_activate_employee_btn='//*[@id="app"]/div[1]/div[2]/div[2]/div/div/div/div[2]/div[2]/div/button'
     job_details_termination_date_result='//*[@id="app"]/div[1]/div[2]/div[2]/div/div/div/div[2]/div[2]/p'
 
+    salary_details_add_btn='//*[@id="app"]/div[1]/div[2]/div[2]/div/div/div/div[2]/div[1]/div/button'
+    salary_details_salary_component='//*[@id="app"]/div[1]/div[2]/div[2]/div/div/div/div[2]/div[1]/form/div[1]/div/div[1]/div/div[2]/input'
+    salary_details_pay_grade_dropdown='//*[@id="app"]/div[1]/div[2]/div[2]/div/div/div/div[2]/div[1]/form/div[1]/div/div[2]/div/div[2]/div/div'
+    salary_details_pay_frequency_dropdown='//*[@id="app"]/div[1]/div[2]/div[2]/div/div/div/div[2]/div[1]/form/div[1]/div/div[3]/div/div[2]/div/div'
+    salary_details_currency_dropdown='//*[@id="app"]/div[1]/div[2]/div[2]/div/div/div/div[2]/div[1]/form/div[1]/div/div[4]/div/div[2]/div/div'
+    salary_details_amount='//*[@id="app"]/div[1]/div[2]/div[2]/div/div/div/div[2]/div[1]/form/div[1]/div/div[5]/div/div[2]/input'
+    salary_details_direct_deposit_toggle='//*[@id="app"]/div[1]/div[2]/div[2]/div/div/div/div[2]/div[1]/form/div[3]/div/label'
+    salary_details_save_btn='//*[@id="app"]/div[1]/div[2]/div[2]/div/div/div/div[2]/div[1]/form/div[5]/button[2]'
+    salary_details_deposit_account_number='//*[@id="app"]/div[1]/div[2]/div[2]/div/div/div/div[2]/div[1]/form/div[4]/div[1]/div[1]/div/div[2]/input'
+    salary_details_deposit_account_type='//*[@id="app"]/div[1]/div[2]/div[2]/div/div/div/div[2]/div[1]/form/div[4]/div[1]/div[2]/div/div[2]/div/div'
+    salary_details_deposit_routing_number='//*[@id="app"]/div[1]/div[2]/div[2]/div/div/div/div[2]/div[1]/form/div[4]/div[2]/div[1]/div/div[2]/input'
+    salary_details_deposit_amount='//*[@id="app"]/div[1]/div[2]/div[2]/div/div/div/div[2]/div[1]/form/div[4]/div[2]/div[2]/div/div[2]/input'
+
+    salary_details_list=[salary_details_salary_component,salary_details_pay_grade_dropdown,salary_details_pay_frequency_dropdown,salary_details_currency_dropdown,
+                         salary_details_amount]
+
+    salary_deposit_list=[salary_details_deposit_account_number,salary_details_deposit_account_type,salary_details_deposit_routing_number,salary_details_deposit_amount]
+
+    salary_component_result = '//*[@id="app"]/div[1]/div[2]/div[2]/div/div/div/div[2]/div[3]/div/div[2]/div/div/div[2]/div'
+    salary_amount_result = '//*[@id="app"]/div[1]/div[2]/div[2]/div/div/div/div[2]/div[3]/div/div[2]/div/div/div[3]/div'
+    salary_currency_result = '//*[@id="app"]/div[1]/div[2]/div[2]/div/div/div/div[2]/div[3]/div/div[2]/div/div/div[4]/div'
+    salary_frequency_result = '//*[@id="app"]/div[1]/div[2]/div[2]/div/div/div/div[2]/div[3]/div/div[2]/div/div/div[5]/div'
+    salary_deposit_amount = '//*[@id="app"]/div[1]/div[2]/div[2]/div/div/div/div[2]/div[3]/div/div[2]/div/div/div[6]/div'
+
+    salary_result=[salary_component_result,salary_amount_result,salary_currency_result,salary_frequency_result,salary_deposit_amount]
+
+    tax_exemptions_status='//*[@id="app"]/div[1]/div[2]/div[2]/div/div/div/div[2]/div[1]/form/div[1]/div/div[1]/div/div[2]/div/div'
+    tax_exemption='//*[@id="app"]/div[1]/div[2]/div[2]/div/div/div/div[2]/div[1]/form/div[1]/div/div[2]/div/div[2]/input'
+    tax_exemptions_state_status='//*[@id="app"]/div[1]/div[2]/div[2]/div/div/div/div[2]/div[1]/form/div[2]/div/div[1]/div/div[2]/div/div'
+    tax_state_exemption='//*[@id="app"]/div[1]/div[2]/div[2]/div/div/div/div[2]/div[1]/form/div[2]/div/div[3]/div/div[2]/input'
+    tax_state_unemployment='//*[@id="app"]/div[1]/div[2]/div[2]/div/div/div/div[2]/div[1]/form/div[2]/div/div[4]/div/div[2]/div/div'
+    tax_state_work_state='//*[@id="app"]/div[1]/div[2]/div[2]/div/div/div/div[2]/div[1]/form/div[2]/div/div[5]/div/div[2]/div/div'
+    tax_details_save_btn='//*[@id="app"]/div[1]/div[2]/div[2]/div/div/div/div[2]/div[1]/form/div[3]/button'
+
+    tax_exemption_list=[tax_exemptions_status,tax_exemption,tax_exemptions_state_status,tax_state_exemption,
+                        tax_state_unemployment,tax_state_work_state,tax_details_save_btn]
 
 
 

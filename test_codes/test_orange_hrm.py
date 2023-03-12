@@ -1,21 +1,19 @@
 import time
 
-import selenium.common.exceptions
 from selenium import webdriver
 from selenium.webdriver.firefox.service import Service
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 from webdriver_manager.firefox import GeckoDriverManager
 from selenium.common.exceptions import TimeoutException
-from selenium.webdriver.support.ui import Select
-from time import sleep
+
 from test_locators import locators
 from test_data import data
 import pytest
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.action_chains import ActionChains
-from selenium.webdriver.support.ui import Select
+
 
 class Test_Orange_hrm:
     # Generator function
@@ -113,15 +111,12 @@ class Test_Orange_hrm:
             drop_down_options = user_role.find_elements(by=By.XPATH, value=locators.Orange_hrm_Locators().user_role_dropdown)
             self.driver.find_element(by=By.XPATH,value="//div[@role='listbox']//span[text()='ESS']").click()
             time.sleep(3)
-            # print(user_role.text,'selected_option')
             options=[]
             for option in drop_down_options:
                 options.append(option.get_attribute("innerText"))
             options=options[1].split("\n")
             options.pop(0)
             print(options)
-            # self.action.click(options[0]).perform()
-            # time.sleep(5)
             if options==data.Orange_hrm_Data().user_role_expected_options:
                 user_role_flag=True
                 print('#------user_role_dropdown options has been validated------#\n')
@@ -168,7 +163,6 @@ class Test_Orange_hrm:
         try:
             self.wait.until(EC.presence_of_element_located((By.XPATH,locators.Orange_hrm_Locators().pim_xpath))).click()
             self.wait.until(EC.presence_of_element_located((By.XPATH,locators.Orange_hrm_Locators().add_button))).click()
-            # self.wait.until(EC.presence_of_element_located((By.XPATH,locators.Orange_hrm_Locators().login_details_toggle))).click()
             self.wait.until(EC.presence_of_element_located((By.XPATH,locators.Orange_hrm_Locators().firstname_textbox))).send_keys(data.Orange_hrm_Data.test_first_name)
             self.wait.until(EC.presence_of_element_located((By.XPATH, locators.Orange_hrm_Locators().middlename_textbox))).send_keys(data.Orange_hrm_Data.test_middle_name)
             time.sleep(2)
@@ -181,7 +175,7 @@ class Test_Orange_hrm:
             self.wait.until(EC.presence_of_element_located((By.XPATH, locators.Orange_hrm_Locators().login_password_textbox))).send_keys(data.Orange_hrm_Data.test_login_password)
             self.wait.until(EC.presence_of_element_located((By.XPATH, locators.Orange_hrm_Locators().login_password_confirm_textbox))).send_keys(data.Orange_hrm_Data.test_login_password)
             self.wait.until(EC.presence_of_element_located((By.XPATH, locators.Orange_hrm_Locators().login_save_button))).click()
-            employee_list_flag=self.wait.until(EC.presence_of_element_located((By.XPATH,locators.Orange_hrm_Locators().add_button)))
+            employee_list_flag=self.wait.until(EC.presence_of_element_located((By.XPATH,locators.Orange_hrm_Locators().personal_details_heading)))
         except Exception as e:
             print('Cannot be able to Access employee list page, error occurred:',e)
         print(menu_options_flag,employee_list_flag)
@@ -240,7 +234,6 @@ class Test_Orange_hrm:
         textbox.send_keys(data)
 
     def test_employee_personal_details_tab(self,booting_function,login):
-        menu_options_flag = self.wait.until(EC.presence_of_element_located((By.XPATH, locators.Orange_hrm_Locators().menu_options)))
         employee_personal_details_result=[]
         try:
             self.wait.until(EC.presence_of_element_located((By.XPATH, locators.Orange_hrm_Locators().pim_xpath))).click()
@@ -303,7 +296,6 @@ class Test_Orange_hrm:
             assert False
 
     def test_employee_contact_details_tab(self,booting_function,login):
-        menu_options_flag = self.wait.until(EC.presence_of_element_located((By.XPATH, locators.Orange_hrm_Locators().menu_options)))
         employee_contact_details_result=[]
         try:
             self.wait.until(EC.presence_of_element_located((By.XPATH, locators.Orange_hrm_Locators().pim_xpath))).click()
@@ -360,7 +352,6 @@ class Test_Orange_hrm:
             assert False
 
     def test_employee_emergency_contacts_tab(self,booting_function,login):
-        menu_options_flag = self.wait.until(EC.presence_of_element_located((By.XPATH, locators.Orange_hrm_Locators().menu_options)))
         employee_emergency_contact_result=[]
         try:
             self.wait.until(EC.presence_of_element_located((By.XPATH, locators.Orange_hrm_Locators().pim_xpath))).click()
@@ -409,7 +400,6 @@ class Test_Orange_hrm:
             assert False
 
     def test_employee_dependants_tab(self,booting_function,login):
-        menu_options_flag = self.wait.until(EC.presence_of_element_located((By.XPATH, locators.Orange_hrm_Locators().menu_options)))
         employee_dependants_result=[]
         try:
             self.wait.until(EC.presence_of_element_located((By.XPATH, locators.Orange_hrm_Locators().pim_xpath))).click()
@@ -459,7 +449,6 @@ class Test_Orange_hrm:
             assert False
 
     def test_employee_job_details_tab(self,booting_function,login):
-        menu_options_flag = self.wait.until(EC.presence_of_element_located((By.XPATH, locators.Orange_hrm_Locators().menu_options)))
         employee_job_details_result=[]
         try:
             self.wait.until(EC.presence_of_element_located((By.XPATH, locators.Orange_hrm_Locators().pim_xpath))).click()
@@ -535,7 +524,6 @@ class Test_Orange_hrm:
             assert False
 
     def test_employee_job_details_termination(self,booting_function,login):
-        menu_options_flag = self.wait.until(EC.presence_of_element_located((By.XPATH, locators.Orange_hrm_Locators().menu_options)))
         employee_job_termination_result=[]
         try:
             self.wait.until(EC.presence_of_element_located((By.XPATH, locators.Orange_hrm_Locators().pim_xpath))).click()
@@ -610,17 +598,16 @@ class Test_Orange_hrm:
             print(employee_job_termination_result,'dsd')
 
         except Exception as e:
-            print('Cannot be able to validate employee job termination details, error occurred:', e)
-            if all(employee_job_termination_result):
-                print("#-----Test_case_passed-----#\n")
-                assert True
-            else:
-                print("#-----Test_case_failed-----#\n")
-                assert False
+            print('Cannot be able to validate employee job termination, error occurred:', e)
+        if all(employee_job_termination_result):
+            print("#-----Test_case_passed-----#\n")
+            assert True
+        else:
+            print("#-----Test_case_failed-----#\n")
+            assert False
 
     def test_employee_job_details_activation(self,booting_function,login):
-        menu_options_flag = self.wait.until(EC.presence_of_element_located((By.XPATH, locators.Orange_hrm_Locators().menu_options)))
-        employee_job_termination_result=[]
+        terminate_employment=None
         try:
             self.wait.until(EC.presence_of_element_located((By.XPATH, locators.Orange_hrm_Locators().pim_xpath))).click()
             self.wait.until(EC.presence_of_element_located((By.XPATH, locators.Orange_hrm_Locators().add_button))).click()
@@ -677,21 +664,135 @@ class Test_Orange_hrm:
             self.action.click(termination_reason).perform()
             self.driver.find_element(by=By.XPATH, value="//div[@role='listbox']//span[text()="+"'"+ data.Orange_hrm_Data.job_termination['termination_reason']+"']").click()
             self.driver.find_element(by=By.XPATH,value=locators.Orange_hrm_Locators.job_details_termination_save_btn).click()
-
-            termination_date=self.wait.until(EC.presence_of_element_located((By.XPATH,locators.Orange_hrm_Locators.job_details_termination_date_result))).text
-            activate_employment=self.driver.find_element(by=By.XPATH,value=locators.Orange_hrm_Locators.job_details_activate_employee_btn)
-
+            time.sleep(3)
+            activate_employment=self.wait.until(EC.presence_of_element_located((By.XPATH,locators.Orange_hrm_Locators.job_details_activate_employee_btn)))
             activate_employment.click()
 
+            terminate_employment=self.wait.until(EC.presence_of_element_located((By.XPATH, locators.Orange_hrm_Locators.job_details_terminate_employee)))
         except Exception as e:
-            print('Cannot be able to validate employee job termination details, error occurred:', e)
-            if all(employee_job_termination_result):
-                print("#-----Test_case_passed-----#\n")
-                assert True
-            else:
-                print("#-----Test_case_failed-----#\n")
-                assert False
+            print('Cannot be able to validate employee job activation, error occurred:', e)
 
+        if terminate_employment:
+            print("Employee activated successfully")
+            assert True
+        else:
+            print("Employee not activated")
+            assert False
+    def test_employee_salary_details(self,booting_function,login):
+        salary_details_result=[]
+        try:
+            self.wait.until(EC.presence_of_element_located((By.XPATH, locators.Orange_hrm_Locators().pim_xpath))).click()
+            self.wait.until(EC.presence_of_element_located((By.XPATH, locators.Orange_hrm_Locators().add_button))).click()
+            time.sleep(2)
+            self.wait.until(EC.presence_of_element_located((By.XPATH, locators.Orange_hrm_Locators().firstname_textbox))).send_keys(data.Orange_hrm_Data.test_first_name1)
+            time.sleep(2)
+            self.wait.until(EC.presence_of_element_located((By.XPATH, locators.Orange_hrm_Locators().lastname_textbox))).send_keys(data.Orange_hrm_Data.test_last_name1)
+            time.sleep(2)
+            self.wait.until(EC.presence_of_element_located((By.XPATH, locators.Orange_hrm_Locators().employee_id_textbox))).send_keys(data.Orange_hrm_Data.test_employee_id1)
+            time.sleep(2)
+            self.wait.until(EC.presence_of_element_located((By.XPATH, locators.Orange_hrm_Locators().login_details_toggle))).click()
+            self.wait.until(EC.presence_of_element_located((By.XPATH, locators.Orange_hrm_Locators().login_status_radio))).click()
+            self.wait.until(EC.presence_of_element_located((By.XPATH, locators.Orange_hrm_Locators().login_username_textbox))).send_keys(data.Orange_hrm_Data.test_login_username1)
+            self.wait.until(EC.presence_of_element_located((By.XPATH, locators.Orange_hrm_Locators().login_password_textbox))).send_keys(data.Orange_hrm_Data.test_login_password1)
+            self.wait.until(EC.presence_of_element_located((By.XPATH, locators.Orange_hrm_Locators().login_password_confirm_textbox))).send_keys(data.Orange_hrm_Data.test_login_password1)
+            self.wait.until(EC.presence_of_element_located((By.XPATH, locators.Orange_hrm_Locators().login_save_button))).click()
+            time.sleep(3)
+
+            self.wait.until(EC.presence_of_element_located((By.XPATH,locators.Orange_hrm_Locators.salary))).click()
+            self.wait.until(EC.presence_of_element_located((By.XPATH,locators.Orange_hrm_Locators.salary_details_add_btn))).click()
+            for i in range(len(locators.Orange_hrm_Locators.salary_details_list)):
+                if locators.Orange_hrm_Locators.salary_details_list[i].endswith('input'):
+                    self.wait.until(EC.presence_of_element_located((By.XPATH,locators.Orange_hrm_Locators.salary_details_list[i]))).send_keys(data.Orange_hrm_Data.salary_details_list[i])
+                elif locators.Orange_hrm_Locators.salary_details_list[i].endswith('div'):
+                    dropdown=self.wait.until(EC.presence_of_element_located((By.XPATH, locators.Orange_hrm_Locators.salary_details_list[i])))
+                    self.action.click(dropdown).perform()
+                    self.driver.find_element(by=By.XPATH, value="//div[@role='listbox']//span[text()=" + "'" +data.Orange_hrm_Data.salary_details_list[i]+ "']").click()
+
+            self.wait.until(EC.presence_of_element_located((By.XPATH,locators.Orange_hrm_Locators.salary_details_direct_deposit_toggle))).click()
+            for i in range(len(locators.Orange_hrm_Locators.salary_deposit_list)):
+                if locators.Orange_hrm_Locators.salary_deposit_list[i].endswith('input'):
+                    self.wait.until(EC.presence_of_element_located((By.XPATH,locators.Orange_hrm_Locators.salary_deposit_list[i]))).send_keys(data.Orange_hrm_Data.salary_deposit_list[i])
+                elif locators.Orange_hrm_Locators.salary_deposit_list[i].endswith('div'):
+                    dropdown=self.wait.until(EC.presence_of_element_located((By.XPATH, locators.Orange_hrm_Locators.salary_deposit_list[i])))
+                    self.action.click(dropdown).perform()
+                    self.driver.find_element(by=By.XPATH, value="//div[@role='listbox']//span[text()=" + "'" +data.Orange_hrm_Data.salary_deposit_list[i]+ "']").click()
+
+            self.wait.until(EC.presence_of_element_located((By.XPATH,locators.Orange_hrm_Locators.salary_details_save_btn))).click()
+
+            for i in range(len(locators.Orange_hrm_Locators.salary_result)):
+                try:
+                    info=self.wait.until(EC.presence_of_element_located((By.XPATH,locators.Orange_hrm_Locators.salary_result[i]))).text
+                    salary_details_result.append(info)
+                except Exception as e:
+                    print(e)
+
+        except Exception as e:
+            print('Cannot be able to validate salary details, error occurred:', e)
+
+        print('data given to the form:', data.Orange_hrm_Data.salary_result)
+        print("data present in the form:", salary_details_result)
+        print('#--------------###############----------------#')
+
+        if salary_details_result==data.Orange_hrm_Data.salary_result:
+            print("Validated salary details successfully")
+            assert True
+        else:
+            print("salary details are invalid")
+            assert False
+
+    def test_employee_salary_tax_exemptions(self,booting_function,login):
+        salary_tax_exemptions_result=[]
+        try:
+            self.wait.until(EC.presence_of_element_located((By.XPATH, locators.Orange_hrm_Locators().pim_xpath))).click()
+            self.wait.until(EC.presence_of_element_located((By.XPATH, locators.Orange_hrm_Locators().add_button))).click()
+            time.sleep(2)
+            self.wait.until(EC.presence_of_element_located((By.XPATH, locators.Orange_hrm_Locators().firstname_textbox))).send_keys(data.Orange_hrm_Data.test_first_name1)
+            time.sleep(2)
+            self.wait.until(EC.presence_of_element_located((By.XPATH, locators.Orange_hrm_Locators().lastname_textbox))).send_keys(data.Orange_hrm_Data.test_last_name1)
+            time.sleep(2)
+            self.wait.until(EC.presence_of_element_located((By.XPATH, locators.Orange_hrm_Locators().employee_id_textbox))).send_keys(data.Orange_hrm_Data.test_employee_id1)
+            time.sleep(2)
+            self.wait.until(EC.presence_of_element_located((By.XPATH, locators.Orange_hrm_Locators().login_details_toggle))).click()
+            self.wait.until(EC.presence_of_element_located((By.XPATH, locators.Orange_hrm_Locators().login_status_radio))).click()
+            self.wait.until(EC.presence_of_element_located((By.XPATH, locators.Orange_hrm_Locators().login_username_textbox))).send_keys(data.Orange_hrm_Data.test_login_username1)
+            self.wait.until(EC.presence_of_element_located((By.XPATH, locators.Orange_hrm_Locators().login_password_textbox))).send_keys(data.Orange_hrm_Data.test_login_password1)
+            self.wait.until(EC.presence_of_element_located((By.XPATH, locators.Orange_hrm_Locators().login_password_confirm_textbox))).send_keys(data.Orange_hrm_Data.test_login_password1)
+            self.wait.until(EC.presence_of_element_located((By.XPATH, locators.Orange_hrm_Locators().login_save_button))).click()
+            time.sleep(3)
+
+            self.wait.until(EC.presence_of_element_located((By.XPATH,locators.Orange_hrm_Locators.tax_exemptions))).click()
+            for i in range(len(locators.Orange_hrm_Locators.tax_exemption_list)):
+                if locators.Orange_hrm_Locators.tax_exemption_list[i].endswith('input'):
+                    self.wait.until(EC.presence_of_element_located((By.XPATH,locators.Orange_hrm_Locators.tax_exemption_list[i]))).send_keys(data.Orange_hrm_Data.tax_exemptions_list[i])
+                elif locators.Orange_hrm_Locators.tax_exemption_list[i].endswith('div'):
+                    dropdown=self.wait.until(EC.presence_of_element_located((By.XPATH, locators.Orange_hrm_Locators.tax_exemption_list[i])))
+                    self.action.click(dropdown).perform()
+                    self.driver.find_element(by=By.XPATH, value="//div[@role='listbox']//span[text()=" + "'" +data.Orange_hrm_Data.tax_exemptions_list[i]+ "']").click()
+            self.wait.until(EC.presence_of_element_located((By.XPATH,locators.Orange_hrm_Locators.tax_details_save_btn))).click()
+
+            for i in range(len(locators.Orange_hrm_Locators.tax_exemption_list)):
+                try:
+                    if locators.Orange_hrm_Locators.tax_exemption_list[i].endswith('input'):
+                        info=self.wait.until(EC.presence_of_element_located((By.XPATH,locators.Orange_hrm_Locators.tax_exemption_list[i]))).get_attribute("value")
+                        salary_tax_exemptions_result.append(info)
+                    elif locators.Orange_hrm_Locators.tax_exemption_list[i].endswith('div'):
+                        info = self.wait.until(EC.presence_of_element_located((By.XPATH, locators.Orange_hrm_Locators.tax_exemption_list[i]))).text
+                except Exception as e:
+                    print(e)
+
+        except Exception as e:
+            print('Cannot be able to validate tax exemption details, error occurred:', e)
+
+        print('data given to the form:', data.Orange_hrm_Data.tax_exemptions_list)
+        print("data present in the form:", salary_tax_exemptions_result)
+        print('#--------------###############----------------#')
+
+        if salary_tax_exemptions_result==data.Orange_hrm_Data.tax_exemptions_list:
+            print("Validated tax exemptions details successfully")
+            assert True
+        else:
+            print("tax exemptions are invalid")
+            assert False
 
 
 

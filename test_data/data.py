@@ -100,7 +100,33 @@ class Orange_hrm_Data:
 
     job_termination_list=[job_termination['termination_date'],job_termination['termination_reason']]
 
+    salary_details={
+        'salary_component':'1000000',
+        'pay_grade':'Grade 1',
+        'pay_frequency':'Monthly',
+        'currency':'United States Dollar',
+        'amount':'50000',
+        'deposit_account_number':'12345678',
+        'account_type':'Savings',
+        'routing_number':'12345678',
+        'deposit_amount':'42424242.00',
+    }
+    salary_details_list=[salary_details['salary_component'],salary_details['pay_grade'],salary_details['pay_frequency'],salary_details['currency'],salary_details['amount']]
+    salary_deposit_list=[salary_details['deposit_account_number'],salary_details['account_type'],salary_details['routing_number'],salary_details['deposit_amount']]
 
+    salary_result=[salary_details['salary_component'],salary_details['amount'],salary_details['currency'],salary_details['pay_frequency'],salary_details['deposit_amount']]
+
+    tax_exemptions={
+        'status':'Single',
+        'exemptions':'10',
+        'state':'Alabama',
+        'state_status':'Single',
+        'state_exemptions':'11',
+        'unemployment_state':'Alabama',
+        'work_state':'Alabama'
+    }
+    tax_exemptions_list=[tax_exemptions['status'],tax_exemptions['exemptions'],tax_exemptions['state'],tax_exemptions['state_status'],tax_exemptions['state_exemptions'],
+                         tax_exemptions['unemployment_state'],tax_exemptions['work_state']]
 
 
     # test_username='sathishsparkzz'
