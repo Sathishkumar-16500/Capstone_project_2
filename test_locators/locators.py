@@ -140,6 +140,67 @@ class Orange_hrm_Locators:
                                            contacts_details_zip_code_xpath, contacts_details_home_no_xpath, contacts_details_mobile_no_xpath,
                                            contacts_details_work_no_xpath, contacts_details_work_email_xpath, contacts_details_other_email_xpath]
 
+    emergency_contacts_add_btn_xpath='//*[@id="app"]/div[1]/div[2]/div[2]/div/div/div/div[2]/div[1]/div/button'
+    emergency_contacts_name_xpath='//*[@id="app"]/div[1]/div[2]/div[2]/div/div/div/div[2]/div[1]/form/div[1]/div/div[1]/div/div[2]/input'
+    emergency_contacts_relationship_xpath='//*[@id="app"]/div[1]/div[2]/div[2]/div/div/div/div[2]/div[1]/form/div[1]/div/div[2]/div/div[2]/input'
+    emergency_contacts_home_telephone_xpath='//*[@id="app"]/div[1]/div[2]/div[2]/div/div/div/div[2]/div[1]/form/div[2]/div/div[1]/div/div[2]/input'
+    emergency_contacts_mobile_xpath='//*[@id="app"]/div[1]/div[2]/div[2]/div/div/div/div[2]/div[1]/form/div[2]/div/div[2]/div/div[2]/input'
+    emergency_contacts_work_telephone_xpath='//*[@id="app"]/div[1]/div[2]/div[2]/div/div/div/div[2]/div[1]/form/div[2]/div/div[3]/div/div[2]/input'
+    emergency_contacts_save_btn_xpath='//*[@id="app"]/div[1]/div[2]/div[2]/div/div/div/div[2]/div[1]/form/div[3]/button[2]'
+
+    emergency_contacts_name_result='//*[@id="app"]/div[1]/div[2]/div[2]/div/div/div/div[2]/div[3]/div/div[2]/div/div/div[2]/div'
+    emergency_contacts_relationship_result='//*[@id="app"]/div[1]/div[2]/div[2]/div/div/div/div[2]/div[3]/div/div[2]/div/div/div[3]/div'
+    emergency_contacts_home_telephone_result='//*[@id="app"]/div[1]/div[2]/div[2]/div/div/div/div[2]/div[3]/div/div[2]/div/div/div[4]/div'
+    emergency_contacts_mobile_result='//*[@id="app"]/div[1]/div[2]/div[2]/div/div/div/div[2]/div[3]/div/div[2]/div/div/div[5]/div'
+    emergency_contacts_work_telephone_result='//*[@id="app"]/div[1]/div[2]/div[2]/div/div/div/div[2]/div[3]/div/div[2]/div/div/div[6]/div'
+
+    emergency_contacts_result_list=[emergency_contacts_name_result,emergency_contacts_relationship_result,emergency_contacts_home_telephone_result,
+                                    emergency_contacts_mobile_result,emergency_contacts_work_telephone_result]
+
+    emergency_contacts_xpath_list=[emergency_contacts_name_xpath,emergency_contacts_relationship_xpath,emergency_contacts_home_telephone_xpath,
+                                   emergency_contacts_mobile_xpath,emergency_contacts_work_telephone_xpath]
+
+
+    dependants_name_xpath='//*[@id="app"]/div[1]/div[2]/div[2]/div/div/div/div[2]/div[1]/form/div[1]/div/div[1]/div/div[2]/input'
+    dependants_relationship_xpath='//*[@id="app"]/div[1]/div[2]/div[2]/div/div/div/div[2]/div[1]/form/div[1]/div/div[2]/div/div[2]/div/div'
+    dependants_dob_xpath='//*[@id="app"]/div[1]/div[2]/div[2]/div/div/div/div[2]/div[1]/form/div[2]/div/div/div/div[2]/div/div/input'
+    dependants_add_btn_xpath='//*[@id="app"]/div[1]/div[2]/div[2]/div/div/div/div[2]/div[1]/div/button'
+    dependants_save_btn_xpath='//*[@id="app"]/div[1]/div[2]/div[2]/div/div/div/div[2]/div[1]/form/div[3]/button[2]'
+
+    dependants_name_result='//*[@id="app"]/div[1]/div[2]/div[2]/div/div/div/div[2]/div[3]/div/div[2]/div/div/div[2]/div'
+    dependants_relationship_result='//*[@id="app"]/div[1]/div[2]/div[2]/div/div/div/div[2]/div[3]/div/div[2]/div/div/div[3]/div'
+    dependants_dob_result='//*[@id="app"]/div[1]/div[2]/div[2]/div/div/div/div[2]/div[3]/div/div[2]/div/div/div[4]/div'
+
+    dependants_xpath_list=[dependants_name_xpath,dependants_relationship_xpath,dependants_dob_xpath]
+    dependants_result_list=[dependants_name_result,dependants_relationship_result,dependants_dob_result]
+
+    job_details_joined_date='//*[@id="app"]/div[1]/div[2]/div[2]/div/div/div/div[2]/div[1]/form/div[1]/div/div[1]/div/div[2]/div/div/input'
+    job_details_job_title_dropdown='//*[@id="app"]/div[1]/div[2]/div[2]/div/div/div/div[2]/div[1]/form/div[1]/div/div[2]/div/div[2]/div/div'
+    job_details_job_specification='//*[@id="app"]/div[1]/div[2]/div[2]/div/div/div/div[2]/div[1]/form/div[1]/div/div[3]/div/div[2]/div'
+    job_details_job_category_dropdown='//*[@id="app"]/div[1]/div[2]/div[2]/div/div/div/div[2]/div[1]/form/div[1]/div/div[4]/div/div[2]/div/div'
+    job_details_sub_unit_dropdown= '//*[@id="app"]/div[1]/div[2]/div[2]/div/div/div/div[2]/div[1]/form/div[1]/div/div[5]/div/div[2]/div/div'
+    job_details_location_dropdown='//*[@id="app"]/div[1]/div[2]/div[2]/div/div/div/div[2]/div[1]/form/div[1]/div/div[6]/div/div[2]/div/div'
+    job_details_employment_status_dropdown='//*[@id="app"]/div[1]/div[2]/div[2]/div/div/div/div[2]/div[1]/form/div[1]/div/div[7]/div/div[2]/div/div'
+    job_details_include_toggle='//*[@id="app"]/div[1]/div[2]/div[2]/div/div/div/div[2]/div[1]/form/div[2]/div/label'
+    job_details_contract_start_date='//*[@id="app"]/div[1]/div[2]/div[2]/div/div/div/div[2]/div[1]/form/div[3]/div/div[1]/div/div[2]/div/div/input'
+    job_details_contract_end_date='//*[@id="app"]/div[1]/div[2]/div[2]/div/div/div/div[2]/div[1]/form/div[3]/div/div[2]/div/div[2]/div/div/input'
+    job_details_save_btn='//*[@id="app"]/div[1]/div[2]/div[2]/div/div/div/div[2]/div[1]/form/div[5]/button'
+
+    job_details_list=[job_details_joined_date,job_details_job_title_dropdown,job_details_job_specification,job_details_job_category_dropdown,
+                      job_details_sub_unit_dropdown,job_details_location_dropdown,job_details_employment_status_dropdown,
+                      job_details_include_toggle,job_details_contract_start_date,job_details_contract_end_date]
+
+    job_details_terminate_employee='//*[@id="app"]/div[1]/div[2]/div[2]/div/div/div/div[2]/div[2]/div/button'
+    job_details_termination_date='//*[@id="app"]/div[1]/div[2]/div[2]/div/div/div/div[2]/div[3]/div/div/div/form/div[1]/div/div[2]/div/div/input'
+    job_details_termination_reason_dropdown='//*[@id="app"]/div[1]/div[2]/div[2]/div/div/div/div[2]/div[3]/div/div/div/form/div[2]/div/div[2]/div/div'
+    job_details_termination_save_btn='//*[@id="app"]/div[1]/div[2]/div[2]/div/div/div/div[2]/div[3]/div/div/div/form/div[4]/button[2]'
+    job_details_activate_employee_btn='//*[@id="app"]/div[1]/div[2]/div[2]/div/div/div/div[2]/div[2]/div/button'
+    job_details_termination_date_result='//*[@id="app"]/div[1]/div[2]/div[2]/div/div/div/div[2]/div[2]/p'
+
+
+
+
+
 
     # save_button='//*[@id="app"]/div[1]/div[2]/div[2]/div/div/div/div[2]/div[1]/form/div[5]/button'
 

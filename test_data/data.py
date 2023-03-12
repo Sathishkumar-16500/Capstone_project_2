@@ -53,13 +53,54 @@ class Orange_hrm_Data:
                              'work_email': 'hokage@mail.com',
                              'other_email': 'uzumaki_naruto@mail.com',
                        }
+    emergency_contact = {'name': 'monkey d luffy',
+                       'relationship': 'king of pirates',
+                       'home_telephone': '7858567674',
+                       'mobile': '334353566',
+                       'work_telephone': '8797979797',
+                       }
 
     personal_details_list=[test_personal_details['first_name'],test_personal_details['middle_name'],test_personal_details['last_name'],test_personal_details['nick_name']
                            ,test_personal_details['employee_id'],test_personal_details['other_id'],test_personal_details['license_no'],test_personal_details['license_expiry_date'],test_personal_details['ssn_no']
                            ,test_personal_details['sin_no'],test_personal_details['dob'],test_personal_details['military_service']]
+
     contact_details_list=[contact_details['street1'], contact_details['street2'], contact_details['city'], contact_details['state']
-                                    , contact_details['zip_code'], contact_details['home_no'], contact_details['mobile_no'], contact_details['work_no'],
+                         ,contact_details['zip_code'], contact_details['home_no'], contact_details['mobile_no'], contact_details['work_no'],
                           contact_details['work_email'], contact_details['other_email']]
+
+    emergency_contact_list=[emergency_contact['name'],emergency_contact['relationship'],emergency_contact['home_telephone'],
+                            emergency_contact['mobile'],emergency_contact['work_telephone']]
+
+    dependants={
+        'name':'roronoa zoro',
+        'relationship':'Child',
+        'dob':'2000-05-16'
+    }
+
+    dependants_list=[dependants['name'],dependants['relationship'],dependants['dob']]
+
+    job_details={
+        'joined_date':'2000-01-01',
+        'job_title':'Chief Financial Officer',
+        'job_specification':'Not Defined',
+        'job_category':'Professionals',
+        'sub_unit':'Technical Support',
+        'location':'Canadian Regional HQ',
+        'employment_status':'Freelance',
+        'contract_start_date':'2000-01-01',
+        'contract_end_date':'2030-01-01'
+    }
+    job_details_list=[job_details['joined_date'],job_details['job_title'],job_details['job_specification'],job_details['job_category'],job_details['sub_unit'],
+                      job_details['location'],job_details['employment_status'],job_details['contract_start_date'],job_details['contract_end_date']]
+
+    job_termination={
+        'termination_date':'2023-03-15',
+        'termination_reason':'Contract Not Renewed'
+    }
+
+    job_termination_list=[job_termination['termination_date'],job_termination['termination_reason']]
+
+
 
 
     # test_username='sathishsparkzz'
